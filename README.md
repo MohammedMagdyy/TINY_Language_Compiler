@@ -1,15 +1,15 @@
 "# TINY_Language_Compiler" 
-##Scanner Part:
+# Scanner Part:
 
- #Inputs : 
+ ## Inputs : 
   TINY language snippet code (multiple lines of code written in TINY language syntax)
   
- #Output: 
+ ## Output: 
   List of ( tokenvalue, tokentype) in a file
 
 
 
-##Parser Part:
+# Parser Part:
 Project Description: 
 • Given the TINY grammar rules you should implement the TINY parser using recursive 
 descent method.
@@ -17,7 +17,7 @@ descent method.
  • The output will be a complete syntax tree of the input source program
 
  
-# Inputs : 
+## Inputs : 
 • List of ( tokenvalue, 
 tokentype) Example:
  x ,IDENTIFIER
@@ -27,7 +27,7 @@ tokentype) Example:
 example tokenvalue , tokentype
  • Input list can be input through GUI textbox or by loading a text file
  
-#Output: 
+## Output: 
  1. State whether the statements are accepted by TINY language or not
  2. Draw Syntax tree on a GUI based application
  3. IF you do not support GUI ( and will lose GUI marks) you can output recognized 
