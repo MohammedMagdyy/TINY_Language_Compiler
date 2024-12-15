@@ -35,7 +35,7 @@ void display_tree(const shared_ptr<TreeNode> &node, const string &prefix = "", b
     }
 }
 
-void print_tree_details(const shared_ptr<TreeNode>& node) {
+/*void print_tree_details(const shared_ptr<TreeNode>& node) {
     if (!node) return;
 
     // Print the current node's name and value
@@ -80,7 +80,7 @@ void print_tree_details(const shared_ptr<TreeNode>& node) {
     for (const auto& sibling : node->siblings) {
         print_tree_details(sibling);
     }
-}
+}*/
 
 
 int main() {
@@ -121,8 +121,8 @@ int main() {
         auto syntaxTree = parser.parse();
 
         // Display the syntax tree
-        print_tree_details(syntaxTree);
-        cout << endl << endl;
+        //print_tree_details(syntaxTree);
+        // cout << endl << endl;
         display_tree(syntaxTree);
 
     } catch (const runtime_error &e) {
