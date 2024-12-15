@@ -20,7 +20,7 @@ void Parser::match(const std::string& expectedType) {
         advance();
     } else {
         throw runtime_error(
-            "Error at line " + to_string(currentToken().line) + " : Unexpected token \"" +
+            "Error at line " + to_string(tokens[currentTokenIndex - 1].line) + " : Unexpected token \"" +
             currentToken().type + "\", expected \"" + expectedType + "\"");
     }
 }
