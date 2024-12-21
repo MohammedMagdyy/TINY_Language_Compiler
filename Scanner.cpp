@@ -60,7 +60,7 @@ vector<Token> tokenize(const string &line, int lineCount) {
         // Check for whitespace to finalize a token
         if (isspace(c)) {
             if (!currentWord.empty()) {
-                if (tokenMap.contains(currentWord)) {
+                if (tokenMap.count(currentWord) > 0) {
                     tokens.push_back({currentWord, tokenMap[currentWord], lineCount});
                 } else if (isNumber(currentWord)) {
                     tokens.push_back({currentWord, "NUMBER", lineCount});
@@ -78,7 +78,7 @@ vector<Token> tokenize(const string &line, int lineCount) {
         // Handle symbols and operators
         if (ispunct(c)) {
             if (!currentWord.empty()) {
-                if (tokenMap.contains(currentWord)) {
+                if (tokenMap.count(currentWord) > 0) {
                     tokens.push_back({currentWord, tokenMap[currentWord], lineCount});
                 } else if (isNumber(currentWord)) {
                     tokens.push_back({currentWord, "NUMBER", lineCount});
@@ -98,7 +98,7 @@ vector<Token> tokenize(const string &line, int lineCount) {
                 ++i; // Skip the next character
             } else {
                 string symbol(1, c);
-                if (tokenMap.contains(symbol)) {
+                if (tokenMap.count(symbol) > 0) {
                     tokens.push_back({symbol, tokenMap[symbol], lineCount});
                 } else {
                     throw runtime_error(
@@ -114,7 +114,7 @@ vector<Token> tokenize(const string &line, int lineCount) {
 
     // Process the last word if there is one
     if (!currentWord.empty()) {
-        if (tokenMap.contains(currentWord)) {
+        if (tokenMap.count(currentWord) > 0) {
             tokens.push_back({currentWord, tokenMap[currentWord], lineCount});
         } else if (isNumber(currentWord)) {
             tokens.push_back({currentWord, "NUMBER", lineCount});
